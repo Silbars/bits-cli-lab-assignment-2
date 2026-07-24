@@ -1,0 +1,8 @@
+Console output of the demo run (same as report.txt, plus the duplicate notice):
+
+DUPLICATE: 'submissions/carol_copy.txt' (hash already seen)
+==== Submission Processing Report ====
+Files processed : 4
+Duplicates found: 1
+Unique backed up: 3
+======================================

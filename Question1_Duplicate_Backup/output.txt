@@ -1,0 +1,33 @@
+$ ls submissions/
+alice.txt  bob.txt  carol_copy.txt  dave.txt
+
+# alice.txt and carol_copy.txt have identical content ("Assignment by Alice"),
+# so carol_copy.txt is a duplicate.
+
+$ bash dedup_backup.sh submissions backup
+DUPLICATE: 'submissions/carol_copy.txt' (hash 4f2a... already seen)
+==== Submission Processing Report ====
+Files processed : 4
+Duplicates found: 1
+Unique backed up: 3
+======================================
+
+$ cat report.txt
+==== Submission Processing Report ====
+Files processed : 4
+Duplicates found: 1
+Unique backed up: 3
+======================================
+
+$ ls backup/
+alice.txt  bob.txt  dave.txt
+
+$ cat errors.log
+# (empty — no errors on this run)
+
+# --- Example run WITH an error (source directory missing) ---
+$ bash dedup_backup.sh missing_dir backup
+Source directory missing. See errors.log
+
+$ cat errors.log
+ERROR: source directory 'missing_dir' does not exist

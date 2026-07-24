@@ -1,0 +1,16 @@
+$ gcc -o employee_records employee_records.c
+$ ./employee_records
+wrote record 0: id=101 name=Asha salary=55000
+wrote record 1: id=102 name=Ben salary=61000
+wrote record 2: id=103 name=Chitra salary=72000
+updated record 1: Ben new salary=68000
+read record 2 directly: id=103 name=Chitra salary=72000
+re-read record 1: id=102 name=Ben salary=68000
+file closed cleanly.
+
+# The file is exactly 3 records long; the update did not change its size,
+# proving the record was rewritten in place rather than the whole file.
+$ ls -l employees.dat
+-rw-------  1 user user 144 employees.dat        # 3 * sizeof(struct Employee)
+
+# Permissions are 0600 (owner read/write only) -> secure.

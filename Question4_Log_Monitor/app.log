@@ -1,0 +1,7 @@
+# Sample log lines that get appended to app.log while the monitor runs:
+2026-07-24 10:00:01 INFO  server started on :8080
+2026-07-24 10:00:03 INFO  request GET /health 200
+2026-07-24 10:00:05 ERROR db connection timeout
+2026-07-24 10:00:06 WARN  retrying db connection
+2026-07-24 10:00:08 ERROR failed to authenticate user 42
+2026-07-24 10:00:09 INFO  request GET /home 200

@@ -1,0 +1,34 @@
+# Commands used to demonstrate vi/vim recovery mechanisms.
+
+# 1. Start editing a config file in vim.
+$ vim server.conf
+# ... make edits, do NOT save ...
+# (system crashes here)
+
+# 2. A swap file was created automatically alongside the original:
+$ ls -a
+.  ..  server.conf  .server.conf.swp
+
+# 3. Re-open the file. vim detects the swap file and offers recovery:
+$ vim server.conf
+E325: ATTENTION
+Found a swap file by the name ".server.conf.swp"
+   ... [O]pen Read-Only, (E)dit, (R)ecover, (D)elete, (Q)uit, (A)bort:
+
+# 4. Choose Recover to restore unsaved changes from the swap file:
+#    press  R
+"server.conf" recovered from ".server.conf.swp"
+
+# 5. Save the recovered content and remove the now-stale swap file:
+:w
+$ ls -a
+.  ..  server.conf              # swap file removed after successful :w and :q
+
+# --- Alternative recovery from the command line (no interactive prompt) ---
+$ vim -r server.conf            # recover directly from the swap file
+$ vim -r                        # list all swap files vim knows about
+
+# --- Undo history persistence (if 'undofile' is enabled in ~/.vimrc) ---
+# :set undofile   -> creates .server.conf.un~ so undo survives a reopen
+$ ls -a
+.  ..  server.conf  .server.conf.un~

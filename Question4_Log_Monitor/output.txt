@@ -1,0 +1,19 @@
+# Terminal 1 — start the monitor:
+$ bash log_monitor.sh app.log
+2026-07-24 10:00:05 ERROR db connection timeout
+2026-07-24 10:00:08 ERROR failed to authenticate user 42
+# (only ERROR lines are shown, in real time as they are appended;
+#  INFO and WARN lines are filtered out. tail keeps running/waiting.)
+
+# Terminal 2 — simulate the app appending new log lines:
+$ echo "2026-07-24 10:00:12 ERROR disk space low on /var" >> app.log
+# -> this line immediately appears in Terminal 1 and in the report.
+
+# The separate report accumulates only ERROR lines:
+$ cat error_report.txt
+2026-07-24 10:00:05 ERROR db connection timeout
+2026-07-24 10:00:08 ERROR failed to authenticate user 42
+2026-07-24 10:00:12 ERROR disk space low on /var
+
+# Because of 2>/dev/null, if the log is rotated/truncated,
+# tail's warning messages never clutter the output.
