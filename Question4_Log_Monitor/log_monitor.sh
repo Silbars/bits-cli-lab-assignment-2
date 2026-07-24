@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # log_monitor.sh
 # Continuously watches a log file, shows new lines in real time,
 # extracts ERROR entries into a separate report, and suppresses noise.
 #
-# Usage: ./log_monitor.sh /path/to/app.log
+# Usage: zsh ./log_monitor.sh /path/to/app.log
 #
 set -u
 

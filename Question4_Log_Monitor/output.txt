@@ -1,7 +1,8 @@
 # Terminal 1 — start the monitor:
-$ bash log_monitor.sh app.log
+$ zsh ./log_monitor.sh app.log
 2026-07-24 10:00:05 ERROR db connection timeout
 2026-07-24 10:00:08 ERROR failed to authenticate user 42
+2026-07-24 10:00:12 ERROR disk space low on /var
 # (only ERROR lines are shown, in real time as they are appended;
 #  INFO and WARN lines are filtered out. tail keeps running/waiting.)
 

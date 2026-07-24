@@ -3,15 +3,15 @@
 **Task:** Build a monitoring tool that (1) displays newly added log entries in real time, (2) extracts ERROR messages, (3) maintains a separate report file, and (4) suppresses unnecessary output. Explain how pipes, `grep`, `tail`, redirection, and `/dev/null` improve efficiency.
 
 **Files**
-- `log_monitor.sh` — the pipeline.
+- `log_monitor.sh` — the zsh pipeline.
 - `app.log` — sample log used to demonstrate it.
-- `output.txt` — captured commands and outputs (representative run on Linux).
+- `output.txt` — captured commands and outputs (representative run on Linux with zsh).
 - `error_report.txt` — the accumulated ERROR report produced by a run.
 - `screenshots/` — add your captured screenshots here.
 
 **Run**
 ```
-bash log_monitor.sh app.log
+zsh log_monitor.sh app.log
 # in another terminal, append lines:  echo "... ERROR ..." >> app.log
 ```
 
