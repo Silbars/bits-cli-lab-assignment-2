@@ -11,6 +11,6 @@ file closed cleanly.
 # The file is exactly 3 records long; the update did not change its size,
 # proving the record was rewritten in place rather than the whole file.
 $ ls -l employees.dat
--rw-------  1 user user 144 employees.dat        # 3 * sizeof(struct Employee)
+-rw-------@ 1 silbars  staff  144 24 Jul 23:32 employees.dat        # 3 * sizeof(struct Employee)
 
 # Permissions are 0600 (owner read/write only) -> secure.

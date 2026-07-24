@@ -1,16 +1,16 @@
 $ gcc -o process_manager process_manager.c
 $ ./process_manager
-[parent] started child 0 (pid 20481)
-[parent] started child 1 (pid 20482)
-[parent] started child 2 (pid 20483)
-[parent] reaped child 20482
-[parent] reaped child 20483
-[parent] child 0 (pid 20481) unresponsive -> SIGTERM
+[parent] started child 0 (pid 18985)
+[parent] started child 1 (pid 18986)
+[parent] started child 2 (pid 18987)
+[parent] reaped child 18987
+[parent] reaped child 18986
+[parent] child 0 (pid 18985) unresponsive -> SIGTERM
 [parent] child 0 ignored SIGTERM -> SIGKILL
-[parent] reaped child 20481
+[parent] reaped child 18985
 [parent] all children handled, exiting.
 
-# Verify no zombies remain after the program exits:
-$ ps -el | grep defunct
+# Verify no zombies from this program remain after the program exits:
+$ ps -el | grep process_manager | grep defunct
 $ echo $?
-1        # grep found nothing -> zero zombie (<defunct>) processes
+1        # grep found nothing -> no defunct process_manager children remain
