@@ -5,3 +5,4 @@
 2026-07-24 10:00:08 ERROR failed to authenticate user 42
 2026-07-24 10:00:09 INFO  request GET /home 200
 2026-07-24 10:00:12 ERROR disk space low on /var
+2026-07-24 10:00:12 ERROR disk space low on /var
