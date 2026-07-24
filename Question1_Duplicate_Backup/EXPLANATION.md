@@ -3,7 +3,7 @@
 **Task:** On a Linux server holding hundreds of student submissions, (1) identify duplicates, (2) back up unique submissions, (3) generate a report of files processed / duplicated / backed up, and (4) store all error messages separately.
 
 **Files in this folder**
-- `dedup_backup.sh` — the solution script.
+- `dedup_backup.sh` — the zsh solution script.
 - `output.txt` — captured commands and outputs (representative run on Linux).
 - `report.txt`, `errors.log`, `backup/` — artifacts produced by a run.
 - `submissions/` — sample input used to demonstrate the script.
